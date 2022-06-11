@@ -17,7 +17,7 @@ Exec:
 
 """
 
-__version__ = "0.0.1"
+__version__ = "0.1.2"
 __author__ = "Fabricio Fagundes"
 __license__ = "Unlicense"
 
@@ -25,21 +25,20 @@ __license__ = "Unlicense"
 import os
 
 
-current_language = os.getenv("LANG", "en_US")[:5]
+current_language = os.getenv("LANG", "en_US")
+print(current_language)
 
-msg = "Hello Pytho!!!"
+msg = {
+        "eng_US": "Hello Python!!!",
+        "pt_BR": "Olá Python!!!",
+        "it_IT": "Ciao Python!!!",
+        "es_SP": "Hola Python!!!",
+        "fr_FR": "Bonjour Python!!!",
+        }
 
-if current_language == "pt_BR":
-    msg = "Olá Python!!!"
-elif current_language == "it_IT":
-    msg = "Ciao Mondo!!!"
-elif current_language == "es_SP":
-    msg = "Hola Mundo!!!"
-elif current_language == "fr_FR":
-    msg = "Bonjour Monde!!!"
 
 # Print the message
-print(msg)
+print(msg[current_language])
 
 
 
